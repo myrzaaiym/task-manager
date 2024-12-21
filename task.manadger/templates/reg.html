@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="static/css/reg.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Task Management</div>
+        <ul class="nav">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/tasks">CREATE</a></li>
+            <li><a href="/about">ABOUT US</a></li>
+            <li><a href="/auth">SIGN UP</a></li>
+        </ul>
+    </header>
+
+    <form class="container" action="/reg" method="POST">
+        <h1 class="login-title">Authorization</h1>
+        <section class="input-box">
+            <input type="text" name="username" placeholder="Username" required>
+            <i class="bx bxs-user"></i>
+        </section>
+        <section class="input-box">
+            <input type="password" name="password" placeholder="Password" required>
+            <i class="bx bxs-lock-alt"></i>
+        </section>
+        <button id="authBtn" class="register-button" type="submit">Login</button>
+        {% if message %}
+            <p class="error-message">{{ message }}</p>
+        {% endif %}
+    </form>
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

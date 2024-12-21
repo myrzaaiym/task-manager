@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="static/css/tasks.css">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="profile">
+            <h2>My Task</h2>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/tasks">CREATE</a></li>
+                <li><a href="/about">ABOUTUS</a></li>
+                <li><a href="/auth">SINGUP</a></li>
+            </ul>
+        </nav>
+        <a href="/">
+            <button class="sign-out">Sign Out</button>
+        </a>
+    </aside>
+    <main class="main-content">
+        <header>
+            <h1>All Tasks</h1>
+        </header>
+        <div class="task-container">
+    {% for task in tasks %}
+    <form class="task-card" method="get">
+        <div>
+            <h3>{{ task['title'] }}</h3>
+            <p>{{ task['description'] }}</p>
+            <p>Due: {{ task['date'] }}</p>
+        </div>
+        <a class="deleteBtn" href="delete?id={{ task['id'] }}">Delete</a>
+    </form>
+    {% endfor %}
+    <div class="task-card add-task">
+        <a href="/taskAdd" id="addTaskBtn">+ Add New Task</a>
+    </div>
+</div>
+    </main>
+</div>
+</body>
+</html>
+

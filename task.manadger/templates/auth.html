@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="static/css/auth.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Task Management</div>
+        <ul class="nav">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/tasks">CREATE</a></li>
+            <li><a href="/about">ABOUTUS</a></li>
+            <li><a href="/auth">SIGNUP</a></li>
+        </ul>
+    </header>
+
+    <form class="container" action="/auth" method="POST">
+        <h1 class="login-title">Registration</h1>
+        {% if message %}
+        <p class="message">{{ message }}</p>
+        {% endif %}
+        <section class="input-box">
+            <input type="text" name="username" placeholder="Username" required>
+            <i class="bx bxs-user"></i>
+        </section>
+        <section class="input-box">
+            <input type="password" name="password" placeholder="Password" required>
+            <i class="bx bxs-lock-alt"></i>
+        </section>
+        <section class="input-box">
+            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+            <i class="bx bxs-lock-alt"></i>
+        </section>
+        <button id="loginButton" class="login-button" type="submit">Register</button>
+        <h5 class="dont-have-an-account">
+            Already have an account? <a href="/reg">Login</a>
+        </h5>
+    </form>
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

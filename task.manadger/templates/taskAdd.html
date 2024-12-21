@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/taskAdd.css">
+</head>
+<body>
+
+    <div class="modal" id="addTaskModal">
+      <div class="modal-content">
+        <h2>Add New Task</h2>
+        <form id="taskForm" action="/tasks" method="post">
+          <label for="taskTitle">Task Title</label>
+          <input type="text" id="taskTitle" name="taskTitle" placeholder="Enter task title" required>
+
+          <label for="taskDescription">Description</label>
+          <textarea id="taskDescription" name="taskDescription" placeholder="Enter task description" required></textarea>
+
+          <label for="taskDate">Date</label>
+          <input type="date" id="taskDate" name="due_date" required>
+
+          <div class="modal-actions">
+            <button type="button" id="cancelBtn">Cancel</button>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+</html>

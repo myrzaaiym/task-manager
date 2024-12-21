@@ -1,0 +1,251 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:linear-gradient(to bottom right, #1a1a2e, #16213e); ;
+  color: #fff;
+}
+
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+
+.sidebar {
+  margin: 20px;
+  width: 200px;
+  background-color: #1e223f;
+  padding: 100;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+
+}
+
+.sidebar .profile {
+  margin: 20px;
+}
+.sidebar h2 {
+  font-size: 18px;
+  margin: 20px;
+}
+
+.sidebar .menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0 20px;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 250ms;
+}
+
+.menu ul li a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.sidebar .menu a.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.sidebar .sign-out {
+  width: 100%;
+  background-color:#0f1b75;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.sidebar .sign-out:hover {
+  transform: scale(1.04);
+  background-color:#5a63a2;
+
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #1e223f;
+  border-radius: 20px;
+  margin: 20px 20px 20px 0;
+}
+
+.main-content header h1 {
+  margin-top: 0;
+}
+
+.task-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.task-card {
+  background-color: #181454;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.task-card h3 {
+  margin: 0;
+}
+
+.task-card p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.task-footer span {
+  font-size: 12px;
+  color: #777;
+}
+
+.task-card.add-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(226, 233, 226);
+  border: 2px dashed rgb(247, 253, 247);
+  cursor: pointer;
+
+}
+
+.task-card.add-task button {
+  background: none;
+  border: none;
+  color: rgb(243, 241, 245);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background: #2b283b;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 0.9rem;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #1c1c25;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.modal-actions button#cancelBtn {
+  background: #a61f2b;
+  color: #fff;
+}
+
+.modal-actions button[type="submit"] {
+  background: #1e6140;
+  color: #fff;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteBtn {
+    background: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: 250ms;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.deleteBtn:hover {
+    transform: scale(1.1);
+}
